@@ -36,11 +36,14 @@ def contact():
 
 @web.route("/post")
 def post():
-	post_id = request.args.get('id')
-	with open('names.csv','r',encoding='utf-8') as file:
-		reader = csv.reader(file)
-		interestingrows=[row for idx, row in enumerate(reader)][int(post_id)]
-	return render_template("post.html",post = interestingrows)
+	try:
+		post_id = request.args.get('id')
+		with open('names.csv','r',encoding='utf-8') as file:
+			reader = csv.reader(file)
+			interestingrows=[row for idx, row in enumerate(reader)][int(post_id)]
+		return render_template("post.html",post = interestingrows)
+	except:
+		return render_template('error.html')
 	
 
 @web.route("/add")
