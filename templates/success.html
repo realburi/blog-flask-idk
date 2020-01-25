@@ -1,0 +1,21 @@
+<script src={{ url_for( 'static', filename="js/jquery.js" ) }}></script>
+<script src={{ url_for( 'static', filename="js/bootstrap.js" ) }}></script>
+<script src={{ url_for( 'static', filename="js/popper.js" ) }}></script>
+<link rel="stylesheet" href={{url_for( "static", filename="css/bootstrap.css" )}}>
+
+<div class="container">
+	<div class="row text-center">
+        <div class="col-md-12 text-center">
+        <br><br> <h1 style="color:#0fad00">Амжилттай!</h1>
+    <br><br>
+        </div>
+        
+	</div>
+</div>
+
+<script>    
+     window.setTimeout(function(){
+       window.location.href = "{{ url_for('index') }}";
+       }, 1000);
+
+ </script>

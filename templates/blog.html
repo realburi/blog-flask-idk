@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.js"></script>
+
+  <br><br><br><br>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">  
+  <title>Summernote</title>
+
+</head>
+<body background="https://i.stack.imgur.com/jGlzr.png">
+<div class="row">
+  <div class="col-md-3">
+    
+  </div>
+
+  <div class="col-md-6">
+
+
+
+  <div class="form-group">
+    <legend>Create a Post!</legend>
+    <label for="exampleInputEmail1">Агуулга </label>
+   <form name="addForm" id="addForm" method="post" action="/blog_post" class="control-group" novalidate>
+  <textarea id="summernote" name="editordata"></textarea>
+    
+  </div>
+
+   <div class="form-group">
+    <label for="exampleInputEmail1">Гарчиг</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Гарчиг" name="title" id="title" required data-validation-required-message="Гарчигаа оруулна уу.">
+  </div>
+
+    <div class="form-group">
+    <label for="exampleInputEmail1">Дэд гарчиг</label>
+    <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Дэд гарчиг" name="subtitle" id="subtitle" required data-validation-required-message="Гарчигаа оруулна уу.">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Зохиолч</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Зохиолч" name="author" id="author" required data-validation-required-message="Гарчигаа оруулна уу.">
+  </div>
+
+  <!-- First name:<br>
+  <input type="text" name="firstname" value="Mickey"> -->
+  <br>
+  <br>
+  <!-- <input type="submit" name="submit"class="control-group"> -->
+  <button type="submit" class="btn btn-primary btn-bg" id="sendMessageButton">Send</button>
+  </form>
+
+  <script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+
+  </script>
+
+  </div>
+
+  <div class="col-md-3">
+    
+  </div>
+  
+</div>
+
+</body>
+  <footer>
+    <script src="{{url_for('static',filename='js/jqBootstrapValidation.js')}}"></script>
+  </footer>
+
+</html>
