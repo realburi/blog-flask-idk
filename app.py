@@ -82,7 +82,6 @@ def check_id():
 		reader = csv.reader(file)
 		result = len([data for data in reader])
 		return str(result)
-	
 
 @web.route('/data')
 def data(): 

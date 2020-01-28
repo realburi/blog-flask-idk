@@ -1,7 +1,18 @@
 from googletrans import Translator
+import pandas as pd 
+import csv
+
 translator = Translator()
-# a = translator.translate('veritas lux mea', src='la',dest='mn')
-# print(dir(Translator))
+a = translator.translate("assainissement", src='fr',dest='mn')
+print(dir(a))
+print("*"*120)
+
+# print("*"*120)
+# print(a.text)
+# print("*"*120)
+# print(a.src)
+# print("*"*120)
+# print(a.origin)
 
 class Data:
 	def __init__(self,data):
@@ -21,8 +32,12 @@ class Data:
 		return unique, non_unique
 
 
-with open('data.txt', 'r', encoding='utf-8') as data:
-	data = Data(data.read())
-
-
-print(data.count())
+print(a.extra_data)
+print("*"*150)
+print(a.pronunciation)
+print("*"*150)
+for data in a.extra_data['translation']:
+	print(data)
+print("*"*150)
+for data in a.extra_data['possible-translations']:
+	print(data)
